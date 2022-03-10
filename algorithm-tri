@@ -1,1 +1,63 @@
-procedure tri
+// algo tri
+
+		
+		
+procedure reculer(l,x,j)
+	donnee
+		l:liste de valeurs
+		x:valeur
+		j:entier	
+	debut
+	j<-j-1
+		tantque(l[j]>x) faire
+			j<-j-1
+		fin tantque
+	fin
+	
+procedure avancer(l,x,i)
+	donnee
+		l:liste de valeurs
+		x:valeur
+		j:entier	
+	debut
+	i<-i+1
+		tantque(l[i]<x) faire
+			i<-i+1
+		fin tantque
+	fin	
+
+procedure partition(*l,p,r):entier
+	donnee
+		l:liste de valeurs
+		p,r:entier
+	variable
+		i,j,x:entiers
+	debut
+		x<-l[p]
+		i<-p
+		j<-r
+		tantque(l[j]>x) faire
+			j<-j-1
+		fin tantque
+		tantque(i<j) faire
+			echanger(l,i,j)
+			reculer(l,x,j)
+			avancer(l,x,i)
+		fin tantque
+		renvoyer(j)
+	fin
+procedure trier(l,p,r)
+	donnee
+		l:liste de valeurs
+		p,r:entier
+	variable
+		q:entier
+	debut
+		si(p<r)
+			q<-partition(l,p,r)
+			trier(l,p,q)
+			trier(l,q+1,r)
+			fin si
+	fin
+	
+
