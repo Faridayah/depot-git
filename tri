@@ -1,0 +1,40 @@
+
+<?php
+define("limit",5);
+function init(){
+	$tab=array();
+	for($i=0; $i<limit; $i++){
+	$tab[$i]=rand(0,100);
+	}
+	return $tab;
+}
+
+function partition(&$tab,$gauche,$droite){
+$pivot=$tab[($gauche+$droite)/2];
+while($gauche<=$droite){ 
+	while($tab[$gauche]<$pivot) $gauche++;
+	while($tab[$droite]>$pivot) $droite--;
+	if($gauche<=$droite ) {
+		$temp=$tab[$gauche];
+		$tab[$gauche]=$tab[$droite];
+		$tab[$droite]=$temp;
+		$gauche++;
+		$droite--;
+		}
+} echo implode(",",$tab)."  @pivot $pivot<br>";
+  return $gauche;
+}
+function tri(&$tab,$gauche,$droite){
+$index=partition($tab,$gauche,$droite);
+if($gauche<$index-1)
+tri($tab,$gauche,$index-1);
+if($index<$droite)
+tri($tab,$index,$droite);
+}
+$tab=init();
+$debut=0;
+$fin=limit-1;
+echo implode(",",$tab)." Voici la Liste non triée<br>";
+tri($tab,$debut,$fin);
+echo implode(",",$tab)."  Voici la Liste triée<br>";
+ ?>
