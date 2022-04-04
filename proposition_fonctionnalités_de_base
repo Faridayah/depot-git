@@ -1,0 +1,8 @@
+1/ Construire l'architecture de la base de données;
+2/ Génération de la base de données;
+3/ Création compte utilisateur sancfis(ajout,modification,suppression,activation,désactivation);
+4/ Création  de compte assureur(ajout,modification,suppression,activation,désactivation);
+5/ Création  de compte assuré(ajout,modification,suppression,activation,désactivation);
+6/ Création  de compte partenaire de santé(ajout,modification,suppression,activation,désactivation);
+7/ Authentification et droit d'accès;
+
