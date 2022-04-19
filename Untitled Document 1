@@ -1,0 +1,16 @@
+scénario d'authentification
+
+--L'utilisateur saisit ses identifiants (login et mot de passe)
+--Le système verifie si les champs ne sont pas vides, 
+	si erreur alors exception1
+--Il vérifie ensuite si les informations saisies sont valides
+	si erreur alors exception2
+--Le système redirige l'utilisateur vers son espace de travail selon son role
+
+ 
+
+Exception1: message d'erreur indiquant qu'un champs est vide, l'acteur s'authentifie de nouveau.
+
+Exception2: message d'erreur indiquant qu'un identifiant n'est pas valide,l'acteur s'authentifie de nouveau.
+
+
