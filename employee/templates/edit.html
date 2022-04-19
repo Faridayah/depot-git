@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block content %}
+
+<form method="POST" class="post-form" action="/update/{{employee.id}}">
+    {% csrf_token %}
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Update Details</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Full Name:</label>
+            <div class="col-sm-4">
+                <input type="text" name="fullname" id="id_fullname" required maxlength="100" value="{{ employee.fullname }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Emp_code:</label>
+            <div class="col-sm-4">
+                <input type="text" name="emp_code" id="id_empcode" required maxlength="5" value="{{ employee.emp_code }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Mobile:</label>
+            <div class="col-sm-4">
+                <input type="text" name="mobile" id="id_mobile" required maxlength="15" value="{{ employee.mobile }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock content %}
